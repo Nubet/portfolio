@@ -12,6 +12,10 @@ export default function Hero() {
               <span>Into working solutions.</span>
           </h1>
           <p className={styles.subhead}>Backend Developer</p>
+          
+          <a href="#projects" className={styles.primaryButton}>
+              View My Work
+          </a>
 
         <div className={styles.socialLinks}>
            <a href="https://linkedin.com/in/norbert-fila" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="LinkedIn">
