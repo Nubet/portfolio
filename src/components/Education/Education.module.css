@@ -1,0 +1,125 @@
+/* Timeline Styles */
+.timeline {
+  display: grid;
+  gap: 24px;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.timelineCard {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform var(--duration-med) var(--ease-out), border-color var(--duration-med) var(--ease-out), box-shadow var(--duration-med) var(--ease-out);
+}
+
+.timelineCard:hover {
+  border-color: var(--card-border-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
+}
+
+.timelineHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.timelineCard h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-heading);
+}
+
+.role {
+  margin: 4px 0 0;
+  color: var(--color-warning);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.dates {
+  font-size: 0.85rem;
+  color: var(--color-attention);
+  font-family: monospace;
+  background: var(--surface-dim);
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.timelineCard ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.timelineCard li + li {
+  margin-top: 8px;
+}
+
+.timelineCard li {
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.timelineCard li:hover {
+  color: var(--text-primary);
+}
+
+.timelineCard li::marker {
+  color: var(--color-accent);
+}
+
+/* Certifications Styles */
+.certificationsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.certCard {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 16px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.certCard:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+}
+
+.certHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.certCard h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-heading);
+  font-weight: 600;
+}
+
+.certIssuer {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}

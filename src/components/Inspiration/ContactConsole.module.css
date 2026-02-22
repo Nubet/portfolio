@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.window {
+  background: var(--bg-900);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.25);
+}
+
+.windowBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--bg-800);
+  border-bottom: 1px solid var(--card-border);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+.windowDots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--text-tertiary);
+  opacity: 0.7;
+}
+
+.dot:nth-child(1) {
+  background: #ff5f57;
+}
+
+.dot:nth-child(2) {
+  background: #febc2e;
+}
+
+.dot:nth-child(3) {
+  background: #28c840;
+}
+
+.windowTitle {
+  flex: 1;
+  text-align: center;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  opacity: 0.8;
+}
+
+.terminal {
+  margin: 0;
+  padding: 22px 24px 26px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-primary);
+  background: var(--bg-950);
+  overflow-x: auto;
+}
+
+.line {
+  display: block;
+  white-space: pre;
+}
+
+.tokenIndent {
+  display: inline-block;
+  width: 2ch;
+}
+
+.tokenPrompt {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.tokenPath {
+  color: var(--text-secondary);
+}
+
+.tokenPunct {
+  color: var(--text-tertiary);
+}
+
+.tokenCommand {
+  color: var(--color-accent);
+}
+
+.tokenUrl {
+  color: var(--color-accent-hover);
+}
+
+.tokenString {
+  color: var(--color-success);
+}
+
+.tokenKey {
+  color: var(--color-warning);
+}
+
+.tokenStatus {
+  color: var(--color-attention);
+}
+
+.tokenLink {
+  color: var(--color-accent-hover);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(118, 212, 214, 0.4);
+  transition: color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
+}
+
+.tokenLink:hover {
+  color: #fff;
+  border-color: rgba(118, 212, 214, 0.8);
+}
+
+@media (max-width: 768px) {
+  .terminal {
+    font-size: 0.85rem;
+    padding: 18px 18px 22px;
+  }
+
+  .windowTitle {
+    display: none;
+  }
+}

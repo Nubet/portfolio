@@ -1,0 +1,89 @@
+.footer {
+  text-align: center;
+  color: var(--text-tertiary);
+  font-size: 0.9rem;
+  padding-top: 56px;
+  border-top: 1px solid var(--card-border);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.cta {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.heading {
+  margin: 0;
+  font-size: clamp(1.6rem, 2.2vw + 1rem, 2.2rem);
+  color: var(--text-heading);
+  letter-spacing: -0.02em;
+}
+
+.subhead {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.actions {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.primaryAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: #fff;
+  font-weight: 600;
+  transition: transform var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out), background var(--duration-fast) var(--ease-out);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.primaryAction:hover {
+  transform: translateY(-2px);
+  background: var(--color-accent-hover);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.3);
+}
+
+.primaryAction:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.secondaryActions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.secondaryActions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  transition: color var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out);
+}
+
+.secondaryActions a:hover {
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.text {
+  font-size: 0.8rem;
+  opacity: 0.6;
+}

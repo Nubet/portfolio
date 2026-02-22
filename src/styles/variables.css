@@ -1,0 +1,41 @@
+:root {
+  /* Backgrounds */
+  --bg-950: #2d2d2d; /* App background */
+  --bg-900: #353535; /* Surface 1 */
+  --bg-800: #3d3d3d; /* Surface 2 */
+  --bg-700: #454545; /* Surface 3 */
+  
+  /* Text hierarchy */
+  --text-heading: #ffffff; /* Highest contrast */
+  --text-primary: #b3b9c5; /* Primary copy */
+  --text-secondary: #777c85; /* Supporting copy */
+  --text-tertiary: #5e6269; /* Subtle / metadata */
+  
+  /* Brand accent */
+  --color-accent: #6ab0f3; /* Primary accent */
+  --color-accent-hover: #76d4d6; /* Accent hover */
+  --color-accent-soft: rgba(106, 176, 243, 0.1);
+  --color-accent-glow: rgba(106, 176, 243, 0.25);
+  --color-accent-gradient: linear-gradient(135deg, #6ab0f3 0%, #76d4d6 100%);
+  
+  /* Semantic status */
+  --color-success: #92d192; /* Success / positive */
+  --color-warning: #ffeea6; /* Warning / attention */
+  --color-attention: #fca369; /* Highlight / notice */
+  --color-danger: #f2777a; /* Error / critical */
+  
+  /* Card Styles */
+  --card-bg: rgba(45, 45, 45, 0.6);
+  --card-border: rgba(179, 185, 197, 0.1);
+  --card-border-hover: rgba(106, 176, 243, 0.3);
+  
+  /* Utility */
+  --surface-dim: rgba(179, 185, 197, 0.05);
+  --surface-hover: rgba(179, 185, 197, 0.1);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 140ms;
+  --duration-med: 240ms;
+}
