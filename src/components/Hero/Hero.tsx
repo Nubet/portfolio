@@ -35,6 +35,10 @@ export default function Hero() {
 
       <div className={styles.visual}>
         <div className={styles.card}>
+          <div className={styles.corner} data-position="top-left"></div>
+          <div className={styles.corner} data-position="top-right"></div>
+          <div className={styles.corner} data-position="bottom-left"></div>
+          <div className={styles.corner} data-position="bottom-right"></div>
           <img
             src="https://placehold.co/600x800/2d2d2d/6ab0f3?text=Your+Image"
             alt="Portrait"

@@ -122,6 +122,42 @@
 .card {
   position: relative;
   z-index: 1;
+  transition: transform var(--duration-med) var(--ease-out);
+}
+
+.corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: var(--color-accent);
+  border-style: solid;
+  z-index: 2;
+  pointer-events: none;
+  transition: transform var(--duration-med) var(--ease-out);
+}
+
+.corner[data-position="top-left"] {
+  top: -12px;
+  left: -12px;
+  border-width: 2px 0 0 2px;
+}
+
+.corner[data-position="top-right"] {
+  top: -12px;
+  right: -12px;
+  border-width: 2px 2px 0 0;
+}
+
+.corner[data-position="bottom-left"] {
+  bottom: -12px;
+  left: -12px;
+  border-width: 0 0 2px 2px;
+}
+
+.corner[data-position="bottom-right"] {
+  bottom: -12px;
+  right: -12px;
+  border-width: 0 2px 2px 0;
 }
 
 .image {
@@ -134,11 +170,19 @@
   transition: transform var(--duration-med) var(--ease-out), box-shadow var(--duration-med) var(--ease-out), border-color var(--duration-med) var(--ease-out);
 }
 
-.card:hover .image {
+.card:hover {
   transform: translateY(-6px) scale(1.01);
+}
+
+.card:hover .image {
   border-color: var(--card-border-hover);
   box-shadow: 0 26px 50px rgba(0, 0, 0, 0.45);
 }
+
+.card:hover .corner[data-position="top-left"] { transform: translate(-4px, -4px); }
+.card:hover .corner[data-position="top-right"] { transform: translate(4px, -4px); }
+.card:hover .corner[data-position="bottom-left"] { transform: translate(-4px, 4px); }
+.card:hover .corner[data-position="bottom-right"] { transform: translate(4px, 4px); }
 
 @media (max-width: 768px) {
   .hero {
