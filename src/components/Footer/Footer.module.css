@@ -8,16 +8,16 @@
   box-shadow: var(--shadow-solid);
   position: relative;
   overflow: hidden;
-  margin-top: 64px;
+  margin-top: 4rem;
 }
 
 .cta {
-  max-width: 800px;
+  max-width: 50rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding: 80px 24px;
+  gap: 1.5rem;
+  padding: 5rem 1.5rem;
   position: relative;
   z-index: 2;
 }
@@ -29,7 +29,7 @@
   color: var(--color-black);
   letter-spacing: -0.02em;
   line-height: 1;
-  text-shadow: 4px 4px 0px var(--color-white);
+  text-shadow: 0.25rem 0.25rem 0px var(--color-white);
 }
 
 .subhead {
@@ -39,51 +39,51 @@
   font-family: 'Outfit', sans-serif;
   font-weight: 600;
   background: var(--color-white);
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   border: var(--border-thick);
   display: inline-block;
   align-self: center;
   transform: rotate(-1deg);
-  box-shadow: 4px 4px 0px var(--color-black);
+  box-shadow: 0.25rem 0.25rem 0px var(--color-black);
 }
 
 .actions {
-  margin-top: 32px;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: 2rem;
 }
 
 .primaryAction {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  padding: 16px 32px;
+  gap: 1rem;
+  padding: 1rem 2rem;
   background: var(--color-red);
   color: var(--color-white);
   font-family: 'Archivo Black', sans-serif;
   font-size: 1.5rem;
   border: var(--border-thick);
-  box-shadow: 6px 6px 0px var(--color-black);
+  box-shadow: 0.375rem 0.375rem 0px var(--color-black);
   transition: transform var(--duration-fast) var(--ease-sharp), box-shadow var(--duration-fast) var(--ease-sharp);
 }
 
 .primaryAction:hover {
-  transform: translate(-4px, -4px);
+  transform: translate(-0.25rem, -0.25rem);
   background: var(--color-blue);
-  box-shadow: 10px 10px 0px var(--color-black);
+  box-shadow: 0.625rem 0.625rem 0px var(--color-black);
 }
 
 .primaryAction:active {
-  transform: translate(2px, 2px);
+  transform: translate(0.125rem, 0.125rem);
   box-shadow: 0px 0px 0px var(--color-black);
 }
 
 .secondaryActions {
   display: flex;
-  gap: 24px;
+  gap: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -91,29 +91,29 @@
 .socialLink {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 0.75rem;
   font-size: 1.1rem;
   font-family: 'Archivo Black', sans-serif;
   color: var(--color-black);
   background: var(--color-white);
-  padding: 12px 24px;
+  padding: 0.75rem 1.5rem;
   border: var(--border-thick);
-  box-shadow: 4px 4px 0px var(--color-black);
+  box-shadow: 0.25rem 0.25rem 0px var(--color-black);
   transition: transform var(--duration-fast) var(--ease-sharp);
 }
 
 .socialLink:hover {
   background: var(--color-black);
   color: var(--color-white);
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px var(--color-red);
+  transform: translate(-0.125rem, -0.125rem);
+  box-shadow: 0.375rem 0.375rem 0px var(--color-red);
 }
 
 .bottomBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px;
+  padding: 1.5rem;
   border-top: var(--border-thick);
   background: var(--color-white);
 }
@@ -127,27 +127,27 @@
 
 .shapes {
   display: flex;
-  gap: 12px;
+  gap: 0.75rem;
 }
 
 .shapeSmallCircle {
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
   background: var(--color-red);
   border-radius: 50%;
   border: var(--border-thick);
 }
 
 .shapeSmallSquare {
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
   background: var(--color-blue);
   border: var(--border-thick);
 }
 
 @media (max-width: 768px) {
   .cta {
-    padding: 60px 16px;
+    padding: 3.75rem 1rem;
   }
 
   .heading {
@@ -161,7 +161,7 @@
 
   .primaryAction {
     font-size: 1.1rem;
-    padding: 12px 24px;
+    padding: 0.75rem 1.5rem;
     width: 100%;
     text-align: center;
   }
@@ -178,7 +178,7 @@
 
   .bottomBar {
     flex-direction: column;
-    gap: 16px;
+    gap: 1rem;
     justify-content: center;
     text-align: center;
   }

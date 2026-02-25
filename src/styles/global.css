@@ -24,7 +24,7 @@ body {
   background-image: 
     linear-gradient(var(--color-black) 1px, transparent 1px),
     linear-gradient(90deg, var(--color-black) 1px, transparent 1px);
-  background-size: 60px 60px;
+  background-size: 3.75rem 3.75rem;
   background-position: center top;
   background-attachment: fixed;
   color: var(--text-primary);
@@ -65,18 +65,18 @@ img {
 /* Layout Utilities */
 .page {
   position: relative;
-  max-width: 1200px;
+  max-width: 75rem;
   margin: 0 auto;
-  padding: 80px 24px 128px;
+  padding: 5rem 1.5rem 8rem;
   display: flex;
   flex-direction: column;
-  gap: 160px;
+  gap: 10rem;
 }
 
 .section {
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 4rem;
   position: relative;
 }
 
@@ -84,8 +84,8 @@ img {
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Asymmetrical */
-  gap: 16px;
-  margin-bottom: 24px;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
   position: relative;
 }
 
@@ -96,7 +96,7 @@ img {
   z-index: 2;
   display: inline-block;
   background: var(--color-yellow);
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   border: var(--border-thick);
   box-shadow: var(--shadow-solid);
   transform: rotate(-2deg); /* Slight tension */
@@ -104,16 +104,16 @@ img {
 
 /* Bauhaus decorative elements */
 .shape-circle {
-  width: 120px;
-  height: 120px;
+  width: 7.5rem;
+  height: 7.5rem;
   border-radius: 50%;
   background-color: var(--color-red);
   border: var(--border-thick);
 }
 
 .shape-square {
-  width: 100px;
-  height: 100px;
+  width: 6.25rem;
+  height: 6.25rem;
   background-color: var(--color-blue);
   border: var(--border-thick);
 }
@@ -121,16 +121,16 @@ img {
 .shape-triangle {
   width: 0;
   height: 0;
-  border-left: 60px solid transparent;
-  border-right: 60px solid transparent;
-  border-bottom: 104px solid var(--color-yellow);
-  filter: drop-shadow(4px 4px 0px var(--color-black));
+  border-left: 3.75rem solid transparent;
+  border-right: 3.75rem solid transparent;
+  border-bottom: 6.5rem solid var(--color-yellow);
+  filter: drop-shadow(0.25rem 0.25rem 0px var(--color-black));
 }
 
 /* Staggered reveals */
 .page > .section {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(2.5rem);
   animation: bauhaus-reveal 800ms var(--ease-sharp) forwards;
 }
 
@@ -145,7 +145,7 @@ img {
 @keyframes bauhaus-reveal {
   from {
     opacity: 0;
-    transform: translateY(40px) scale(0.98);
+    transform: translateY(2.5rem) scale(0.98);
   }
   to {
     opacity: 1;
@@ -166,12 +166,18 @@ img {
 
 @media (max-width: 768px) {
   .page {
-    padding: 40px 16px 80px;
-    gap: 100px;
+    padding: 2.5rem 1rem 5rem;
+    gap: 6.25rem;
   }
   
   .section-heading h2 {
     transform: rotate(0deg);
-    box-shadow: 4px 4px 0px 0px var(--color-black);
+    box-shadow: 0.25rem 0.25rem 0px 0px var(--color-black);
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 90%;
   }
 }

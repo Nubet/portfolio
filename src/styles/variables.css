@@ -15,12 +15,12 @@
   --text-inverse: var(--bg-primary);
   
   /* Structural */
-  --border-thick: 4px solid var(--color-black);
-  --border-thin: 2px solid var(--color-black);
-  
+  --border-thick: 0.25rem solid var(--color-black);
+  --border-thin: 0.125rem solid var(--color-black);
+
   /* Shadow */
-  --shadow-solid: 8px 8px 0px 0px var(--color-black);
-  --shadow-solid-hover: 12px 12px 0px 0px var(--color-black);
+  --shadow-solid: 0.5rem 0.5rem 0px 0px var(--color-black);
+  --shadow-solid-hover: 0.75rem 0.75rem 0px 0px var(--color-black);
   
   /* Motion */
   --ease-sharp: cubic-bezier(0.19, 1, 0.22, 1);

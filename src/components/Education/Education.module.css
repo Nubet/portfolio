@@ -1,7 +1,7 @@
 .container {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 40px;
+  gap: 2.5rem;
   width: 100%;
 }
 
@@ -14,16 +14,16 @@
   background: var(--color-white);
   border: var(--border-thick);
   box-shadow: var(--shadow-solid);
-  padding: 40px;
+  padding: 2.5rem;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 2rem;
   transition: transform var(--duration-fast) var(--ease-sharp), box-shadow var(--duration-fast) var(--ease-sharp);
   position: relative;
 }
 
 .timelineCard:hover {
-  transform: translate(-4px, -4px);
+  transform: translate(-0.25rem, -0.25rem);
   box-shadow: var(--shadow-solid-hover);
 }
 
@@ -32,7 +32,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 16px;
+  width: 1rem;
   height: 100%;
   background-color: var(--color-yellow);
   border-right: var(--border-thick);
@@ -41,10 +41,10 @@
 .timelineHeader {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1rem;
   border-bottom: var(--border-thick);
-  padding-bottom: 24px;
-  margin-left: 16px;
+  padding-bottom: 1.5rem;
+  margin-left: 1rem;
 }
 
 .institution {
@@ -60,14 +60,14 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 16px;
+  gap: 1rem;
 }
 
 .degree {
   background: var(--color-blue);
   color: var(--color-white);
   font-family: 'Archivo Black', sans-serif;
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   border: var(--border-thick);
   font-size: 1.1rem;
 }
@@ -77,42 +77,42 @@
   color: var(--color-black);
   background: var(--color-white);
   font-family: 'Archivo Black', sans-serif;
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   border: var(--border-thick);
 }
 
 .list {
-  margin: 0 0 0 16px;
+  margin: 0 0 0 1rem;
   padding: 0;
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1rem;
 }
 
 .list li {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
+  gap: 1rem;
   font-size: 1.1rem;
   color: var(--color-black);
   line-height: 1.5;
 }
 
 .bullet {
-  width: 16px;
-  height: 16px;
+  width: 1rem;
+  height: 1rem;
   background-color: var(--color-black);
   border-radius: 50%;
   flex-shrink: 0;
-  margin-top: 4px;
+  margin-top: 0.25rem;
 }
 
 /* Certifications Sidebar */
 .certificationsSidebar {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 1.5rem;
 }
 
 .sidebarTitle {
@@ -121,34 +121,34 @@
   font-family: 'Archivo Black', sans-serif;
   color: var(--color-black);
   background: var(--color-yellow);
-  padding: 16px;
+  padding: 1rem;
   border: var(--border-thick);
   text-align: center;
-  box-shadow: 4px 4px 0px var(--color-black);
+  box-shadow: 0.25rem 0.25rem 0px var(--color-black);
   transform: rotate(2deg);
 }
 
 .certList {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  margin-top: 16px;
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
 .certCard {
   background: var(--color-white);
   border: var(--border-thick);
-  padding: 24px;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  box-shadow: 4px 4px 0px var(--color-black);
+  gap: 0.75rem;
+  box-shadow: 0.25rem 0.25rem 0px var(--color-black);
   transition: transform var(--duration-fast) var(--ease-sharp);
 }
 
 .certCard:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px var(--color-black);
+  transform: translate(-0.125rem, -0.125rem);
+  box-shadow: 0.375rem 0.375rem 0px var(--color-black);
   background: var(--color-yellow);
 }
 
@@ -156,7 +156,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 16px;
+  gap: 1rem;
 }
 
 .certName {
@@ -171,7 +171,7 @@
   font-family: 'Archivo Black', sans-serif;
   color: var(--color-white);
   background: var(--color-red);
-  padding: 4px 8px;
+  padding: 0.25rem 0.5rem;
   border: var(--border-thick);
   font-size: 0.9rem;
 }
@@ -189,7 +189,7 @@
   }
   
   .timelineCard {
-    padding: 24px;
+    padding: 1.5rem;
   }
 
   .sidebarTitle {
