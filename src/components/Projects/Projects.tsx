@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { Github, ExternalLink, Download, ArrowRight, Code, X, ChevronLeft, ChevronRight } from 'lucide-react'
 import styles from './Projects.module.css'
 
@@ -40,6 +41,8 @@ const projects = [
 export default function Projects() {
   const displayedProjects = projects.slice(0, 2)
   const [lightbox, setLightbox] = useState<null | { projectIndex: number; imageIndex: number }>(null)
+  const closeButtonRef = useRef<HTMLButtonElement | null>(null)
+  const [portalTarget, setPortalTarget] = useState<HTMLElement | null>(null)
 
   const openLightbox = (projectIndex: number) => {
     setLightbox({ projectIndex, imageIndex: 0 })
@@ -50,6 +53,92 @@ export default function Projects() {
   }
 
   const activeProject = lightbox ? displayedProjects[lightbox.projectIndex] : null
+
+  const goToPrevious = () => {
+    if (!activeProject || !lightbox) return
+    const total = activeProject.images.length
+    const nextIndex = (lightbox.imageIndex - 1 + total) % total
+    setLightbox({ projectIndex: lightbox.projectIndex, imageIndex: nextIndex })
+  }
+
+  const goToNext = () => {
+    if (!activeProject || !lightbox) return
+    const total = activeProject.images.length
+    const nextIndex = (lightbox.imageIndex + 1) % total
+    setLightbox({ projectIndex: lightbox.projectIndex, imageIndex: nextIndex })
+  }
+
+  useEffect(() => {
+    setPortalTarget(document.body)
+  }, [])
+
+  useEffect(() => {
+    if (!lightbox) return
+    const scrollY = window.scrollY
+    const previousBodyStyle = {
+      overflow: document.body.style.overflow,
+      paddingRight: document.body.style.paddingRight,
+    }
+    const previousHtmlStyle = {
+      overflow: document.documentElement.style.overflow,
+      scrollBehavior: document.documentElement.style.scrollBehavior,
+    }
+
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
+
+    document.documentElement.classList.add('lightbox-open')
+    document.body.classList.add('lightbox-open')
+    document.body.style.overflow = 'hidden'
+    document.documentElement.style.overflow = 'hidden'
+    document.documentElement.style.scrollBehavior = 'auto'
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`
+    }
+
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        closeLightbox()
+        return
+      }
+      if (event.key === 'ArrowLeft') {
+        goToPrevious()
+        return
+      }
+      if (event.key === 'ArrowRight') {
+        goToNext()
+      }
+    }
+
+    window.addEventListener('keydown', handleKey)
+    closeButtonRef.current?.focus()
+
+    return () => {
+      document.documentElement.classList.remove('lightbox-open')
+      document.body.classList.remove('lightbox-open')
+      document.body.style.overflow = previousBodyStyle.overflow
+      document.body.style.paddingRight = previousBodyStyle.paddingRight
+      document.documentElement.style.overflow = previousHtmlStyle.overflow
+      document.documentElement.style.scrollBehavior = previousHtmlStyle.scrollBehavior
+      requestAnimationFrame(() => {
+        window.scrollTo(0, scrollY)
+      })
+      window.removeEventListener('keydown', handleKey)
+    }
+  }, [lightbox, activeProject])
+
+  useEffect(() => {
+    if (!activeProject || !lightbox) return
+    const total = activeProject.images.length
+    if (total <= 1) return
+    const nextIndex = (lightbox.imageIndex + 1) % total
+    const prevIndex = (lightbox.imageIndex - 1 + total) % total
+    const preload = (index: number) => {
+      const image = new Image()
+      image.src = activeProject.images[index]
+    }
+    preload(nextIndex)
+    preload(prevIndex)
+  }, [activeProject, lightbox])
 
   return (
     <section className="section" id="projects">
@@ -129,14 +218,22 @@ export default function Projects() {
       </div>
 
       {/* Lightbox - keeping functionality, updating style slightly to fit */}
-      {activeProject && lightbox && (
-        <div className={styles.lightbox} onClick={closeLightbox} role="dialog" aria-modal="true">
+      {portalTarget && activeProject && lightbox && createPortal(
+        <div
+          className={styles.lightbox}
+          onClick={closeLightbox}
+          onWheel={(event) => event.preventDefault()}
+          onTouchMove={(event) => event.preventDefault()}
+          role="dialog"
+          aria-modal="true"
+        >
           <div className={styles.lightboxContent} onClick={(event) => event.stopPropagation()}>
             <button
               type="button"
               className={styles.lightboxClose}
               onClick={closeLightbox}
               aria-label="Close image"
+              ref={closeButtonRef}
             >
               <X size={32} strokeWidth={3} />
             </button>
@@ -145,6 +242,9 @@ export default function Projects() {
                 className={styles.lightboxImage}
                 src={activeProject.images[lightbox.imageIndex]}
                 alt={`${activeProject.title} screenshot`}
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
               />
             </div>
             {activeProject.images.length > 1 && (
@@ -152,11 +252,7 @@ export default function Projects() {
                 <button
                   type="button"
                   className={styles.lightboxControl}
-                  onClick={() => {
-                    const total = activeProject.images.length
-                    const nextIndex = (lightbox.imageIndex - 1 + total) % total
-                    setLightbox({ projectIndex: lightbox.projectIndex, imageIndex: nextIndex })
-                  }}
+                  onClick={goToPrevious}
                   aria-label="Previous image"
                 >
                   <ChevronLeft size={32} strokeWidth={3} />
@@ -167,11 +263,7 @@ export default function Projects() {
                 <button
                   type="button"
                   className={styles.lightboxControl}
-                  onClick={() => {
-                    const total = activeProject.images.length
-                    const nextIndex = (lightbox.imageIndex + 1) % total
-                    setLightbox({ projectIndex: lightbox.projectIndex, imageIndex: nextIndex })
-                  }}
+                  onClick={goToNext}
                   aria-label="Next image"
                 >
                   <ChevronRight size={32} strokeWidth={3} />
@@ -179,7 +271,8 @@ export default function Projects() {
               </div>
             )}
           </div>
-        </div>
+        </div>,
+        portalTarget
       )}
     </section>
   )

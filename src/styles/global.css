@@ -5,6 +5,13 @@ html {
   overflow-x: hidden;
 }
 
+html.lightbox-open,
+body.lightbox-open {
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
 * {
   box-sizing: border-box;
 }
