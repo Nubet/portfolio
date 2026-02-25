@@ -314,7 +314,8 @@
 }
 
 @media (max-width: 900px) {
-  .card {
+  .card,
+  .card:nth-child(even) {
     grid-template-columns: 1fr;
     padding: 1.5rem;
   }
