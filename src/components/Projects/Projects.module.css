@@ -68,7 +68,8 @@
 .imageBadge {
   background: var(--color-yellow);
   color: var(--color-black);
-  font-family: 'Archivo Black', sans-serif;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
   padding: 0.25rem 0.5rem;
   border: var(--border-thin);
   font-size: 0.9rem;
@@ -77,7 +78,8 @@
 .imageCount {
   background: var(--color-black);
   color: var(--color-white);
-  font-family: 'Archivo Black', sans-serif;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
   padding: 0.25rem 0.5rem;
   border: var(--border-thin);
   border-color: var(--color-white);
@@ -136,7 +138,8 @@
 .tag {
   background: var(--color-white);
   color: var(--color-black);
-  font-family: 'Archivo Black', sans-serif;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
   padding: 0.375rem 0.75rem;
   border: var(--border-thin);
   font-size: 0.9rem;
@@ -161,6 +164,16 @@
   border: var(--border-thick);
   border-color: var(--color-black);
   cursor: pointer;
+}
+
+.sourceLink {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+}
+
+.getItLink {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
 }
 
 .link:hover {

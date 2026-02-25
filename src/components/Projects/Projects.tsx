@@ -185,13 +185,13 @@ export default function Projects() {
               
               <div className={styles.links}>
                 {project.repoLink && (
-                  <a href={project.repoLink} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                  <a href={project.repoLink} target="_blank" rel="noopener noreferrer" className={`${styles.link} ${styles.sourceLink}`}>
                     <Github size={20} strokeWidth={2.5} /> SOURCE
                   </a>
                 )}
                 
                 {project.downloadLink ? (
-                  <a href={project.downloadLink} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                  <a href={project.downloadLink} target="_blank" rel="noopener noreferrer" className={`${styles.link} ${styles.getItLink}`}>
                     <Download size={20} strokeWidth={2.5} /> GET IT
                   </a>
                 ) : project.demoLink ? (

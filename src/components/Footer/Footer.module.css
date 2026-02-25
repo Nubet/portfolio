@@ -25,7 +25,8 @@
 .heading {
   margin: 0;
   font-size: clamp(2.5rem, 5vw + 1rem, 4rem);
-  font-family: 'Archivo Black', sans-serif;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
   color: var(--color-black);
   letter-spacing: -0.02em;
   line-height: 1;
@@ -93,7 +94,8 @@
   align-items: center;
   gap: 0.75rem;
   font-size: 1.1rem;
-  font-family: 'Archivo Black', sans-serif;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
   color: var(--color-black);
   background: var(--color-white);
   padding: 0.75rem 1.5rem;
@@ -121,7 +123,8 @@
 .text {
   margin: 0;
   font-size: 0.9rem;
-  font-family: 'Archivo Black', sans-serif;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 500;
   color: var(--color-black);
 }
 
