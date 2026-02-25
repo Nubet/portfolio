@@ -2,7 +2,8 @@ import styles from './Career.module.css'
 
 const career = [
     {
-      company: 'SKN Telin (Lodz University of Technology)',
+      company: 'SKN Telin',
+      subtitle: '(Lodz University of Technology)',
       role: 'Java Backend Developer',
       dates: 'Oct 2025 - Present',
       details: [
@@ -19,21 +20,28 @@ export default function Career() {
   return (
     <section className="section" id="career">
       <div className="section-heading">
-        <h2>Career</h2>
+        <h2>EXPERIENCE.</h2>
+        <div className="shape-circle" style={{ position: 'absolute', left: '-60px', top: '20px', zIndex: -1, width: '80px', height: '80px' }}></div>
       </div>
       <div className={styles.timeline}>
         {career.map((item) => (
           <article className={styles.card} key={item.company}>
             <div className={styles.header}>
-              <div>
-                <h3>{item.company}</h3>
-                <p className={styles.role}>{item.role}</p>
+              <div className={styles.companyInfo}>
+                <h3 className={styles.company}>{item.company}</h3>
+                <span className={styles.subtitle}>{item.subtitle}</span>
               </div>
-              <span className={styles.dates}>{item.dates}</span>
+              <div className={styles.meta}>
+                <span className={styles.role}>{item.role}</span>
+                <span className={styles.dates}>{item.dates}</span>
+              </div>
             </div>
-            <ul>
+            <ul className={styles.list}>
               {item.details.map((detail, index) => (
-                <li key={index}>{detail}</li>
+                <li key={index}>
+                   <div className={styles.bullet}></div>
+                   {detail}
+                </li>
               ))}
             </ul>
           </article>

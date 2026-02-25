@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Star, Github, ExternalLink, Download, ArrowRight, Code, ChevronLeft, ChevronRight, X } from 'lucide-react'
+import { Github, ExternalLink, Download, ArrowRight, Code, X, ChevronLeft, ChevronRight } from 'lucide-react'
 import styles from './Projects.module.css'
 
 const projects = [
@@ -54,7 +54,9 @@ export default function Projects() {
   return (
     <section className="section" id="projects">
       <div className="section-heading">
-        <h2>Featured Projects</h2>
+        <h2>WORK.</h2>
+        {/* Decorative elements */}
+        <div className="shape-square" style={{ position: 'absolute', right: '-40px', top: '-40px', zIndex: 1, transform: 'rotate(10deg)' }}></div>
       </div>
       
       <div className={styles.projects}>
@@ -72,8 +74,8 @@ export default function Projects() {
                >
                  <img src={imageSrc} alt={project.title} loading="lazy" />
                  <div className={styles.imageOverlay}>
-                   <span className={styles.imageBadge}>View gallery</span>
-                   <span className={styles.imageCount}>1/{totalImages}</span>
+                   <span className={styles.imageBadge}>GALLERY</span>
+                   <span className={styles.imageCount}>{totalImages} IMAGES</span>
                  </div>
                </button>
             </div>
@@ -81,7 +83,7 @@ export default function Projects() {
             <div className={styles.content}>
               <div className={styles.header}>
                 <h3 className={styles.title}>{project.title}</h3>
-                {project.featured && <Star className={styles.featuredIcon} size={18} fill="currentColor" />}
+                {project.featured && <div className={styles.featuredBadge}>FEATURED</div>}
               </div>
               
               <p className={styles.description}>{project.description}</p>
@@ -95,23 +97,23 @@ export default function Projects() {
               <div className={styles.links}>
                 {project.repoLink && (
                   <a href={project.repoLink} target="_blank" rel="noopener noreferrer" className={styles.link}>
-                    <Github size={18} /> Code
+                    <Github size={20} strokeWidth={2.5} /> SOURCE
                   </a>
                 )}
                 
                 {project.downloadLink ? (
                   <a href={project.downloadLink} target="_blank" rel="noopener noreferrer" className={styles.link}>
-                    <Download size={18} /> Download
+                    <Download size={20} strokeWidth={2.5} /> GET IT
                   </a>
                 ) : project.demoLink ? (
                   <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className={styles.link}>
-                    <ExternalLink size={18} /> Live Demo
+                    <ExternalLink size={20} strokeWidth={2.5} /> LIVE APP
                   </a>
                 ) : null}
 
                 {!project.repoLink && !project.demoLink && !project.downloadLink && (
                     <span className={styles.link} style={{ opacity: 0.5, cursor: 'default' }}>
-                        <Code size={18} /> In Development
+                        <Code size={20} strokeWidth={2.5} /> WIP
                     </span>
                 )}
               </div>
@@ -122,9 +124,11 @@ export default function Projects() {
       
       <div className={styles.viewAll}>
         <a href="https://github.com/norbertfila?tab=repositories" target="_blank" rel="noopener noreferrer" className={styles.viewAllLink}>
-          View all projects <ArrowRight size={16} />
+          EXPLORE GITHUB <ArrowRight size={20} strokeWidth={3} />
         </a>
       </div>
+
+      {/* Lightbox - keeping functionality, updating style slightly to fit */}
       {activeProject && lightbox && (
         <div className={styles.lightbox} onClick={closeLightbox} role="dialog" aria-modal="true">
           <div className={styles.lightboxContent} onClick={(event) => event.stopPropagation()}>
@@ -134,13 +138,15 @@ export default function Projects() {
               onClick={closeLightbox}
               aria-label="Close image"
             >
-              <X size={20} />
+              <X size={32} strokeWidth={3} />
             </button>
-            <img
-              className={styles.lightboxImage}
-              src={activeProject.images[lightbox.imageIndex]}
-              alt={`${activeProject.title} screenshot`}
-            />
+            <div className={styles.lightboxImageContainer}>
+              <img
+                className={styles.lightboxImage}
+                src={activeProject.images[lightbox.imageIndex]}
+                alt={`${activeProject.title} screenshot`}
+              />
+            </div>
             {activeProject.images.length > 1 && (
               <div className={styles.lightboxControls}>
                 <button
@@ -153,10 +159,10 @@ export default function Projects() {
                   }}
                   aria-label="Previous image"
                 >
-                  <ChevronLeft size={20} />
+                  <ChevronLeft size={32} strokeWidth={3} />
                 </button>
                 <span className={styles.lightboxIndicator}>
-                  {lightbox.imageIndex + 1}/{activeProject.images.length}
+                  {lightbox.imageIndex + 1} / {activeProject.images.length}
                 </span>
                 <button
                   type="button"
@@ -168,7 +174,7 @@ export default function Projects() {
                   }}
                   aria-label="Next image"
                 >
-                  <ChevronRight size={20} />
+                  <ChevronRight size={32} strokeWidth={3} />
                 </button>
               </div>
             )}

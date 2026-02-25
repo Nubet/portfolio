@@ -1,136 +1,112 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
-
 .container {
-  max-width: 980px;
+  max-width: 800px;
   margin: 0 auto;
+  width: 100%;
+  position: relative;
 }
 
 .window {
-  background: var(--bg-900);
-  border: 1px solid var(--card-border);
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.25);
+  background: var(--color-black);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-solid);
+  display: flex;
+  flex-direction: column;
 }
 
 .windowBar {
+  background: var(--color-yellow);
+  border-bottom: var(--border-thick);
+  padding: 16px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 10px 14px;
-  background: var(--bg-800);
-  border-bottom: 1px solid var(--card-border);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-  color: var(--text-tertiary);
-}
-
-.windowDots {
-  display: flex;
-  gap: 8px;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--text-tertiary);
-  opacity: 0.7;
-}
-
-.dot:nth-child(1) {
-  background: #ff5f57;
-}
-
-.dot:nth-child(2) {
-  background: #febc2e;
-}
-
-.dot:nth-child(3) {
-  background: #28c840;
+  justify-content: center;
 }
 
 .windowTitle {
-  flex: 1;
-  text-align: center;
-  letter-spacing: 0.08em;
-  text-transform: lowercase;
-  opacity: 0.8;
+  font-family: 'Archivo Black', sans-serif;
+  color: var(--color-black);
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
 }
 
 .terminal {
-  margin: 0;
-  padding: 22px 24px 26px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: var(--text-primary);
-  background: var(--bg-950);
-  overflow-x: auto;
+  padding: 40px;
+  font-family: 'Outfit', monospace; /* Using Outfit for a cleaner look, or standard monospace */
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .line {
-  display: block;
-  white-space: pre;
-}
-
-.tokenIndent {
-  display: inline-block;
-  width: 2ch;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
 }
 
 .tokenPrompt {
-  color: var(--text-primary);
-  font-weight: 500;
+  color: var(--color-red);
+  font-family: 'Archivo Black', sans-serif;
 }
 
-.tokenPath {
-  color: var(--text-secondary);
-}
-
-.tokenPunct {
-  color: var(--text-tertiary);
-}
-
-.tokenCommand {
-  color: var(--color-accent);
-}
-
-.tokenUrl {
-  color: var(--color-accent-hover);
-}
-
-.tokenString {
-  color: var(--color-success);
+.tokenText {
+  color: var(--color-white);
 }
 
 .tokenKey {
-  color: var(--color-warning);
+  color: var(--color-yellow);
+  font-family: 'Archivo Black', sans-serif;
 }
 
-.tokenStatus {
-  color: var(--color-attention);
+.tokenValue {
+  color: var(--color-white);
 }
 
-.tokenLink {
-  color: var(--color-accent-hover);
+.actionButton {
+  background: var(--color-white);
+  color: var(--color-black);
+  font-family: 'Archivo Black', sans-serif;
+  padding: 12px 24px;
+  border: var(--border-thick);
+  border-color: var(--color-white);
+  cursor: pointer;
+  margin-top: 16px;
   text-decoration: none;
-  border-bottom: 1px dashed rgba(118, 212, 214, 0.4);
-  transition: color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
+  display: inline-block;
+  transition: all var(--duration-fast) var(--ease-sharp);
 }
 
-.tokenLink:hover {
-  color: #fff;
-  border-color: rgba(118, 212, 214, 0.8);
+.actionButton:hover {
+  background: var(--color-blue);
+  color: var(--color-white);
+  border-color: var(--color-white);
+  transform: translate(4px, -4px);
+  box-shadow: -4px 4px 0px var(--color-white);
 }
 
 @media (max-width: 768px) {
   .terminal {
-    font-size: 0.85rem;
-    padding: 18px 18px 22px;
+    padding: 24px 16px;
+    font-size: 0.9rem;
+    gap: 12px;
   }
 
   .windowTitle {
-    display: none;
+    font-size: 1rem;
+  }
+
+  .line {
+    gap: 8px;
+  }
+
+  .actionButton {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+    width: 100%;
+    text-align: center;
   }
 }

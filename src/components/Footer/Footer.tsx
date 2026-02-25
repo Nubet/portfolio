@@ -1,29 +1,35 @@
-import { Github, Linkedin, Mail } from 'lucide-react'
+import { Github, Linkedin, ArrowUpRight } from 'lucide-react'
 import styles from './Footer.module.css'
 
 export default function Footer() {
   return (
     <footer className={styles.footer} id="contact">
       <div className={styles.cta}>
-        <h2 className={styles.heading}>Let’s build something real.</h2>
+        <h2 className={styles.heading}>LET'S BUILD SOMETHING.</h2>
         <p className={styles.subhead}>
-          If you have a project, idea, or collaboration in mind, I’m open to talk.
+          HAVE A PROJECT, IDEA, OR COLLABORATION IN MIND?
         </p>
         <div className={styles.actions}>
           <a className={styles.primaryAction} href="mailto:nubet2137@gmail.com">
-            <Mail size={18} /> Start a conversation
+            START A CONVERSATION <ArrowUpRight size={24} strokeWidth={3} />
           </a>
           <div className={styles.secondaryActions}>
-            <a href="https://linkedin.com/in/norbert-fila" target="_blank" rel="noopener noreferrer">
-              <Linkedin size={16} /> LinkedIn
+            <a href="https://www.linkedin.com/in/nobert-fila/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+              <Linkedin size={24} strokeWidth={2.5} /> LINKEDIN
             </a>
-            <a href="https://github.com/norbertfila" target="_blank" rel="noopener noreferrer">
-              <Github size={16} /> GitHub
+            <a href="https://github.com/nubet" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+              <Github size={24} strokeWidth={2.5} /> GITHUB
             </a>
           </div>
         </div>
       </div>
-      <p className={styles.text}>&copy; {new Date().getFullYear()} Norbert Fila. All rights reserved.</p>
+      <div className={styles.bottomBar}>
+        <p className={styles.text}>&copy; {new Date().getFullYear()} NORBERT FILA. ALL RIGHTS RESERVED.</p>
+        <div className={styles.shapes}>
+           <div className={styles.shapeSmallCircle}></div>
+           <div className={styles.shapeSmallSquare}></div>
+        </div>
+      </div>
     </footer>
   )
 }

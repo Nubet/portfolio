@@ -15,12 +15,12 @@ const education = [
 
 const certifications = [
   {
-    name: 'InfoSukces Laureate 2023/2024',
+    name: 'InfoSukces Laureate',
     issuer: 'Lodz University of Technology',
     year: '2024',
   },
   {
-    name: 'CCNA: Introduction to Networks',
+    name: 'CCNA: Intro to Networks',
     issuer: 'Cisco Networking Academy',
     year: '2025',
   },
@@ -30,38 +30,45 @@ export default function Education() {
   return (
     <section className="section" id="education">
       <div className="section-heading">
-        <h2>Education</h2>
+        <h2>EDUCATION.</h2>
       </div>
-      <div className={styles.timeline}>
-        {education.map((item) => (
-          <article className={styles.timelineCard} key={item.institution}>
-            <div className={styles.timelineHeader}>
-              <div>
-                <h3>{item.institution}</h3>
-                <p className={styles.role}>{item.degree}</p>
+      <div className={styles.container}>
+        <div className={styles.mainTimeline}>
+          {education.map((item) => (
+            <article className={styles.timelineCard} key={item.institution}>
+              <div className={styles.timelineHeader}>
+                <h3 className={styles.institution}>{item.institution}</h3>
+                <div className={styles.meta}>
+                  <span className={styles.degree}>{item.degree}</span>
+                  <span className={styles.dates}>{item.dates}</span>
+                </div>
               </div>
-              <span className={styles.dates}>{item.dates}</span>
-            </div>
-            <ul>
-              {item.details.map((detail) => (
-                <li key={detail}>{detail}</li>
-              ))}
-            </ul>
-          </article>
-        ))}
-      </div>
-      
-      {/* Simple Certifications List */}
-      <div className={styles.certificationsGrid}>
-         {certifications.map((cert) => (
-           <div className={styles.certCard} key={cert.name}>
-             <div className={styles.certHeader}>
-                <h3>{cert.name}</h3>
-                <span className={styles.dates}>{cert.year}</span>
-             </div>
-             <p className={styles.certIssuer}>{cert.issuer}</p>
+              <ul className={styles.list}>
+                {item.details.map((detail) => (
+                  <li key={detail}>
+                    <div className={styles.bullet}></div>
+                    {detail}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+        
+        <div className={styles.certificationsSidebar}>
+           <h3 className={styles.sidebarTitle}>CERTIFICATIONS</h3>
+           <div className={styles.certList}>
+             {certifications.map((cert) => (
+               <div className={styles.certCard} key={cert.name}>
+                 <div className={styles.certHeader}>
+                    <h4 className={styles.certName}>{cert.name}</h4>
+                    <span className={styles.certYear}>{cert.year}</span>
+                 </div>
+                 <p className={styles.certIssuer}>{cert.issuer}</p>
+               </div>
+             ))}
            </div>
-         ))}
+        </div>
       </div>
     </section>
   )

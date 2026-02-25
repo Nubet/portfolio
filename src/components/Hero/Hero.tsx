@@ -1,50 +1,59 @@
-import { Github, Linkedin, Mail, FileText } from 'lucide-react'
+import { Github, Linkedin, Mail, FileText, ArrowRight } from 'lucide-react'
 import styles from './Hero.module.css'
 
 export default function Hero() {
   return (
     <header className={styles.hero}>
+      {/* Decorative Bauhaus Shapes */}
+      <div className={styles.shape1}></div>
+      <div className={styles.shape2}></div>
+      <div className={styles.shape3}></div>
+
       <div className={styles.copy}>
-        <span className={styles.eyebrow}>Norbert Fila.</span>
+        <div className={styles.titleContainer}>
           <h1 className={styles.title}>
-              I'm Norbert, and I enjoy<br />
-              <span>Transforming raw ideas</span>
-              <span>Into working solutions.</span>
+              NORBERT<br />
+              FILA.
           </h1>
-          <p className={styles.subhead}>Backend Developer</p>
-          
+          <span className={styles.badge}>BACKEND DEV</span>
+        </div>
+
+        <p className={styles.subhead}>
+          TRANSFORMING RAW IDEAS<br />
+          INTO WORKING SOLUTIONS.
+        </p>
+        
+        <div className={styles.actions}>
           <a href="#projects" className={styles.primaryButton}>
-              View My Work
+              VIEW WORK <ArrowRight size={24} strokeWidth={3} />
           </a>
 
-        <div className={styles.socialLinks}>
-           <a href="https://linkedin.com/in/norbert-fila" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="LinkedIn">
-             <Linkedin size={20} />
-           </a>
-           <a href="https://github.com/norbertfila" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="GitHub">
-             <Github size={20} />
-           </a>
-           <a href="mailto:nubet2137@gmail.com" className={styles.socialIcon} aria-label="Email">
-             <Mail size={20} />
-           </a>
-           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Resume / CV">
-             <FileText size={20} />
-           </a>
+          <div className={styles.socialLinks}>
+            <a href="https://www.linkedin.com/in/nobert-fila/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="LinkedIn">
+              <Linkedin size={28} strokeWidth={2.5} />
+            </a>
+            <a href="https://github.com/nubet" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="GitHub">
+              <Github size={28} strokeWidth={2.5} />
+            </a>
+            <a href="mailto:nubet2137@gmail.com" className={styles.socialIcon} aria-label="Email">
+              <Mail size={28} strokeWidth={2.5} />
+            </a>
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Resume / CV">
+              <FileText size={28} strokeWidth={2.5} />
+            </a>
+          </div>
         </div>
       </div>
 
       <div className={styles.visual}>
-        <div className={styles.card}>
-          <div className={styles.corner} data-position="top-left"></div>
-          <div className={styles.corner} data-position="top-right"></div>
-          <div className={styles.corner} data-position="bottom-left"></div>
-          <div className={styles.corner} data-position="bottom-right"></div>
+        <div className={styles.portraitWrapper}>
           <img
-            src="https://placehold.co/600x800/2d2d2d/6ab0f3?text=Your+Image"
+            src="https://placehold.co/600x800/E31837/F4F4F0?text=NF"
             alt="Portrait"
             className={styles.image}
             loading="lazy"
           />
+          <div className={styles.portraitFrame}></div>
         </div>
       </div>
     </header>

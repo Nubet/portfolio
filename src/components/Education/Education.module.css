@@ -1,125 +1,198 @@
-/* Timeline Styles */
-.timeline {
+.container {
   display: grid;
-  gap: 24px;
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
   width: 100%;
 }
 
-.timelineCard {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-  padding: 24px;
+.mainTimeline {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  transition: transform var(--duration-med) var(--ease-out), border-color var(--duration-med) var(--ease-out), box-shadow var(--duration-med) var(--ease-out);
+}
+
+.timelineCard {
+  background: var(--color-white);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-solid);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  transition: transform var(--duration-fast) var(--ease-sharp), box-shadow var(--duration-fast) var(--ease-sharp);
+  position: relative;
 }
 
 .timelineCard:hover {
-  border-color: var(--card-border-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
+  transform: translate(-4px, -4px);
+  box-shadow: var(--shadow-solid-hover);
+}
+
+.timelineCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 100%;
+  background-color: var(--color-yellow);
+  border-right: var(--border-thick);
 }
 
 .timelineHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-bottom: var(--border-thick);
+  padding-bottom: 24px;
+  margin-left: 16px;
+}
+
+.institution {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-family: 'Archivo Black', sans-serif;
+  color: var(--color-black);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.degree {
+  background: var(--color-blue);
+  color: var(--color-white);
+  font-family: 'Archivo Black', sans-serif;
+  padding: 8px 16px;
+  border: var(--border-thick);
+  font-size: 1.1rem;
+}
+
+.dates {
+  font-size: 1rem;
+  color: var(--color-black);
+  background: var(--color-white);
+  font-family: 'Archivo Black', sans-serif;
+  padding: 8px 16px;
+  border: var(--border-thick);
+}
+
+.list {
+  margin: 0 0 0 16px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  font-size: 1.1rem;
+  color: var(--color-black);
+  line-height: 1.5;
+}
+
+.bullet {
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-black);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+/* Certifications Sidebar */
+.certificationsSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sidebarTitle {
+  margin: 0;
+  font-size: 1.5rem;
+  font-family: 'Archivo Black', sans-serif;
+  color: var(--color-black);
+  background: var(--color-yellow);
+  padding: 16px;
+  border: var(--border-thick);
+  text-align: center;
+  box-shadow: 4px 4px 0px var(--color-black);
+  transform: rotate(2deg);
+}
+
+.certList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.certCard {
+  background: var(--color-white);
+  border: var(--border-thick);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 4px 4px 0px var(--color-black);
+  transition: transform var(--duration-fast) var(--ease-sharp);
+}
+
+.certCard:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--color-black);
+  background: var(--color-yellow);
+}
+
+.certHeader {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 16px;
 }
 
-.timelineCard h3 {
+.certName {
   margin: 0;
   font-size: 1.1rem;
-  color: var(--text-heading);
+  font-family: 'Archivo Black', sans-serif;
+  color: var(--color-black);
+  line-height: 1.2;
 }
 
-.role {
-  margin: 4px 0 0;
-  color: var(--color-warning);
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-.dates {
-  font-size: 0.85rem;
-  color: var(--color-attention);
-  font-family: monospace;
-  background: var(--surface-dim);
+.certYear {
+  font-family: 'Archivo Black', sans-serif;
+  color: var(--color-white);
+  background: var(--color-red);
   padding: 4px 8px;
-  border-radius: 4px;
-  white-space: nowrap;
-}
-
-.timelineCard ul {
-  margin: 0;
-  padding-left: 20px;
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-}
-
-.timelineCard li + li {
-  margin-top: 8px;
-}
-
-.timelineCard li {
-  transition: color var(--duration-fast) var(--ease-out);
-}
-
-.timelineCard li:hover {
-  color: var(--text-primary);
-}
-
-.timelineCard li::marker {
-  color: var(--color-accent);
-}
-
-/* Certifications Styles */
-.certificationsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-  max-width: 800px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.certCard {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-  padding: 16px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  transition: transform var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
-}
-
-.certCard:hover {
-  border-color: var(--color-accent);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
-}
-
-.certHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.certCard h3 {
-  margin: 0;
-  font-size: 1rem;
-  color: var(--text-heading);
-  font-weight: 600;
+  border: var(--border-thick);
+  font-size: 0.9rem;
 }
 
 .certIssuer {
   margin: 0;
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  
+  .timelineCard {
+    padding: 24px;
+  }
+
+  .sidebarTitle {
+    transform: rotate(0);
+  }
 }

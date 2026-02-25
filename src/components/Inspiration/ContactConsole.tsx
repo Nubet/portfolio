@@ -6,71 +6,39 @@ export default function ContactConsole() {
       <div className={styles.container}>
         <div className={styles.window}>
           <div className={styles.windowBar}>
-            <div className={styles.windowDots}>
-              <span className={styles.dot} />
-              <span className={styles.dot} />
-              <span className={styles.dot} />
-            </div>
-            <div className={styles.windowTitle}>bash — contact</div>
+            <div className={styles.windowTitle}>SYSTEM_PROMPT: CONNECT</div>
           </div>
-          <pre className={styles.terminal}>
-            <code>
-              <span className={styles.line}>
-                <span className={styles.tokenPrompt}>norbert@portfolio</span>
-                <span className={styles.tokenPunct}>:</span>
-                <span className={styles.tokenPath}>~</span>
-                <span className={styles.tokenPunct}>$</span>{' '}
-                <span className={styles.tokenCommand}>curl</span>{' '}
-                <span className={styles.tokenCommand}>-X</span>{' '}
-                <span className={styles.tokenCommand}>POST</span>{' '}
-                <span className={styles.tokenUrl}>https://api.norbertfila.dev/contact</span>{' \\'}
-              </span>
-              <span className={styles.line}>
-                <span className={styles.tokenIndent} />
-                <span className={styles.tokenCommand}>-H</span>{' '}
-                <span className={styles.tokenString}>{'"Content-Type: application/json"'}</span>{' \\'}
-              </span>
-              <span className={styles.line}>
-                <span className={styles.tokenIndent} />
-                <span className={styles.tokenCommand}>-d</span>{' '}
-                <span className={styles.tokenString}>
-                  &apos;{'{'}&quot;intent&quot;: &quot;build_something_great&quot;{'}'}&apos;
-                </span>
-              </span>
-              <span className={styles.line}>
-                <span className={styles.tokenStatus}>HTTP/1.1 202 Accepted</span>
-              </span>
-              <span className={styles.line}>
-                <span className={styles.tokenPunct}>{'{'}</span>
-              </span>
-              <span className={styles.line}>
-                <span className={styles.tokenIndent} />
-                <span className={styles.tokenKey}>{'"status"'}</span>
-                <span className={styles.tokenPunct}>:</span>{' '}
-                <span className={styles.tokenString}>{'"success"'}</span>
-                <span className={styles.tokenPunct}>,</span>
-              </span>
-              <span className={styles.line}>
-                <span className={styles.tokenIndent} />
-                <span className={styles.tokenKey}>{'"message"'}</span>
-                <span className={styles.tokenPunct}>:</span>{' '}
-                <span className={styles.tokenString}>{'"Connection established. Ready to collaborate."'}</span>
-                <span className={styles.tokenPunct}>,</span>
-              </span>
-              <span className={styles.line}>
-                <span className={styles.tokenIndent} />
-                <span className={styles.tokenKey}>{'"action"'}</span>
-                <span className={styles.tokenPunct}>:</span>{' '}
-                <a className={styles.tokenLink} href="#contact">
-                  {'"Initialize Contact"'}
-                </a>
-              </span>
-              <span className={styles.line}>
-                <span className={styles.tokenPunct}>{'}'}</span>
-              </span>
-            </code>
-          </pre>
+          <div className={styles.terminal}>
+            <div className={styles.line}>
+              <span className={styles.tokenPrompt}>ACTION REQUIRED:</span>
+            </div>
+            <div className={styles.line}>
+              <span className={styles.tokenText}>ESTABLISH CONNECTION WITH DEVELOPER</span>
+            </div>
+            <div className={styles.line}>
+               <br/>
+            </div>
+            <div className={styles.line}>
+              <span className={styles.tokenKey}>STATUS:</span>{' '}
+              <span className={styles.tokenValue}>READY FOR NEW CHALLENGES</span>
+            </div>
+            <div className={styles.line}>
+              <span className={styles.tokenKey}>TARGET:</span>{' '}
+              <span className={styles.tokenValue}>NUBET2137@GMAIL.COM</span>
+            </div>
+            <div className={styles.line}>
+               <br/>
+            </div>
+            <div className={styles.line}>
+              <span className={styles.tokenPrompt}>&gt;</span>{' '}
+              <a className={styles.actionButton} href="mailto:nubet2137@gmail.com">
+                INITIALIZE CONTACT SEQUENCE
+              </a>
+            </div>
+          </div>
         </div>
+        {/* Decorative elements */}
+        <div className="shape-square" style={{ position: 'absolute', left: '-20px', bottom: '-20px', zIndex: -1, background: 'var(--color-red)' }}></div>
       </div>
     </section>
   )
