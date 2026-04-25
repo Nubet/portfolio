@@ -212,7 +212,7 @@ export default function Projects() {
       </div>
       
       <div className={styles.viewAll}>
-        <a href="https://github.com/norbertfila?tab=repositories" target="_blank" rel="noopener noreferrer" className={styles.viewAllLink}>
+        <a href="https://github.com/nubet?tab=repositories" target="_blank" rel="noopener noreferrer" className={styles.viewAllLink}>
           EXPLORE GITHUB <ArrowRight size={20} strokeWidth={3} />
         </a>
       </div>
