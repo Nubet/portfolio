@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail, FileText, ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import styles from './Hero.module.css'
 
 export default function Hero() {
@@ -38,9 +39,9 @@ export default function Hero() {
             <a href="mailto:nubet2137@gmail.com" className={styles.socialIcon} aria-label="Email">
               <Mail size={28} strokeWidth={2.5} />
             </a>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Resume / CV">
+            <Link to="/resume.pdf" target="_blank" className={styles.socialIcon} aria-label="Resume / CV">
               <FileText size={28} strokeWidth={2.5} />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
