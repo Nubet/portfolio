@@ -2,6 +2,17 @@ import styles from './Career.module.css'
 
 const career = [
     {
+      company: 'Freelance',
+      subtitle: 'useme.com',
+      role: 'React Web Developer',
+      dates: 'March 2026 - Present',
+      details: [
+        'Delivering custom-built web solutions including landing pages, one-pagers, and digital business cards.',
+        'Handling the full process from initial UI design to production-ready code.',
+        'Optimizing web performance and ensuring responsive, scalable design.',
+      ],
+    },
+    {
       company: 'SKN Telin',
       subtitle: '(Lodz University of Technology)',
       role: 'Java Backend Developer',
