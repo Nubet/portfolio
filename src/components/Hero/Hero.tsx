@@ -49,7 +49,7 @@ export default function Hero() {
       <div className={styles.visual}>
         <div className={styles.portraitWrapper}>
           <img
-            src="https://placehold.co/600x800/E31837/F4F4F0?text=NF"
+            src='profile/avatar.jpg'
             alt="Portrait"
             className={styles.image}
             loading="lazy"
