@@ -13,12 +13,12 @@ const projects = [
     downloadLink: null,
     featured: true,
     images: [
-      '/study-mood/1.jpg',
-      '/study-mood/2.jpg',
-      '/study-mood/3.jpg',
-      '/study-mood/4.jpg',
-      '/study-mood/5.jpg',
-      '/study-mood/6.jpg',
+      `${import.meta.env.BASE_URL}study-mood/1.jpg`,
+      `${import.meta.env.BASE_URL}study-mood/2.jpg`,
+      `${import.meta.env.BASE_URL}study-mood/3.jpg`,
+      `${import.meta.env.BASE_URL}study-mood/4.jpg`,
+      `${import.meta.env.BASE_URL}study-mood/5.jpg`,
+      `${import.meta.env.BASE_URL}study-mood/6.jpg`,
     ],
   },
   {
@@ -30,10 +30,10 @@ const projects = [
     downloadLink: 'https://addons.mozilla.org/en-US/firefox/addon/grayscale-everywhere/',
     featured: true,
     images: [
-      '/grayscale-filter/1.jpg',
-      '/grayscale-filter/2.jpg',
-      '/grayscale-filter/3.jpg',
-      '/grayscale-filter/4.jpg',
+      `${import.meta.env.BASE_URL}grayscale-filter/1.jpg`,
+      `${import.meta.env.BASE_URL}grayscale-filter/2.jpg`,
+      `${import.meta.env.BASE_URL}grayscale-filter/3.jpg`,
+      `${import.meta.env.BASE_URL}grayscale-filter/4.jpg`,
     ],
   },
 ]
