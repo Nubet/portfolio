@@ -37,6 +37,23 @@ const projects = [
       `${import.meta.env.BASE_URL}grayscale-filter/4.jpg`,
     ],
   },
+  {
+    title: 'ISTQB Tester App',
+    description: 'A mobile study app for ISTQB CTFL prep with chapter-based learning, exam simulation, glossary search, bookmarks, and local progress tracking that marks questions as mastered after correct answers.',
+    tags: ['Expo', 'React Native', 'TypeScript', 'sqlite'],
+    repoLink: 'https://github.com/Nubet/istqb-tester-app',
+    demoLink: null,
+    downloadLink: '',
+    featured: true,
+    images: [
+      `${import.meta.env.BASE_URL}ISTQB-tester-app/0-main-screen.PNG`,
+      `${import.meta.env.BASE_URL}ISTQB-tester-app/1-tryb-nauki.PNG`,
+      `${import.meta.env.BASE_URL}ISTQB-tester-app/2-tryb-nauki.PNG`,
+      `${import.meta.env.BASE_URL}ISTQB-tester-app/3-fiszki.PNG`,
+      `${import.meta.env.BASE_URL}ISTQB-tester-app/4-fiszki.PNG`,
+      `${import.meta.env.BASE_URL}ISTQB-tester-app/5-fiszki.PNG`,
+    ],
+  },
 ]
 
 export default function Projects({ all = false }: { all?: boolean }) {
@@ -192,10 +209,16 @@ export default function Projects({ all = false }: { all?: boolean }) {
                   </a>
                 )}
                 
-                {project.downloadLink ? (
-                  <a href={project.downloadLink} target="_blank" rel="noopener noreferrer" className={`${styles.link} ${styles.getItLink}`}>
-                    <Download size={20} strokeWidth={2.5} /> GET IT
-                  </a>
+                {project.downloadLink !== null ? (
+                  project.downloadLink ? (
+                    <a href={project.downloadLink} target="_blank" rel="noopener noreferrer" className={`${styles.link} ${styles.getItLink}`}>
+                      <Download size={20} strokeWidth={2.5} /> GET IT
+                    </a>
+                  ) : (
+                    <span className={`${styles.link} ${styles.getItLink}`} style={{ opacity: 0.5, cursor: 'default' }}>
+                      <Download size={20} strokeWidth={2.5} /> GET IT
+                    </span>
+                  )
                 ) : project.demoLink ? (
                   <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className={styles.link}>
                     <ExternalLink size={20} strokeWidth={2.5} /> LIVE APP
