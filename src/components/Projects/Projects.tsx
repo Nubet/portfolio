@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Github, ExternalLink, Download, ArrowRight, Code, X, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import styles from './Projects.module.css'
 
 const projects = [
@@ -38,8 +39,8 @@ const projects = [
   },
 ]
 
-export default function Projects() {
-  const displayedProjects = projects.slice(0, 2)
+export default function Projects({ all = false }: { all?: boolean }) {
+  const displayedProjects = all ? projects : projects.slice(0, 2)
   const [lightbox, setLightbox] = useState<null | { projectIndex: number; imageIndex: number }>(null)
   const closeButtonRef = useRef<HTMLButtonElement | null>(null)
   const [portalTarget, setPortalTarget] = useState<HTMLElement | null>(null)
@@ -142,11 +143,12 @@ export default function Projects() {
 
   return (
     <section className="section" id="projects">
-      <div className="section-heading">
-        <h2>WORK.</h2>
-        {/* Decorative elements */}
-        <div className="shape-square" style={{ position: 'absolute', right: '-40px', top: '-40px', zIndex: 1, transform: 'rotate(10deg)' }}></div>
-      </div>
+      {!all && (
+        <div className="section-heading">
+          <h2>WORK.</h2>
+          <div className="shape-square" style={{ position: 'absolute', right: '-40px', top: '-40px', zIndex: 1, transform: 'rotate(10deg)' }}></div>
+        </div>
+      )}
       
       <div className={styles.projects}>
         {displayedProjects.map((project, index) => {
@@ -211,13 +213,20 @@ export default function Projects() {
         )})}
       </div>
       
-      <div className={styles.viewAll}>
-        <a href="https://github.com/nubet?tab=repositories" target="_blank" rel="noopener noreferrer" className={styles.viewAllLink}>
-          EXPLORE GITHUB <ArrowRight size={20} strokeWidth={3} />
-        </a>
-      </div>
+      {!all ? (
+        <div className={styles.viewAll}>
+          <Link to="/projects" className={styles.viewAllLink}>
+            VIEW ALL PROJECTS <ArrowRight size={20} strokeWidth={3} />
+          </Link>
+        </div>
+      ) : (
+        <div className={styles.viewAll}>
+          <a href="https://github.com/nubet?tab=repositories" target="_blank" rel="noopener noreferrer" className={styles.viewAllLink}>
+            EXPLORE GITHUB <ArrowRight size={20} strokeWidth={3} />
+          </a>
+        </div>
+      )}
 
-      {/* Lightbox - keeping functionality, updating style slightly to fit */}
       {portalTarget && activeProject && lightbox && createPortal(
         <div
           className={styles.lightbox}
