@@ -1,0 +1,40 @@
+name: Deploy Portfolio to Oracle Cloud
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Copy files to Oracle Server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.ORACLE_IP_NORBERTFILA }}
+          username: ${{ secrets.ORACLE_USER_NORBERTFILA }}
+          key: ${{ secrets.ORACLE_SSH_KEY_NORBERTFILA }}
+          source: "dist/*"
+          target: "/var/www/norbertfila.com/portfolio"
+          strip_components: 1
+
+      - name: Cleanup on failure
+        if: failure()
+        run: echo "Deployment failed - Check the logs above."
