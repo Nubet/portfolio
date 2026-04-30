@@ -12,9 +12,11 @@ export default function Hero() {
 
       <div className={styles.copy}>
         <div className={styles.titleContainer}>
-          <h1 className={styles.title}>
+          <h1 className={styles.title} aria-label="Norbert Fila">
+            <span aria-hidden="true">
               NORBERT<br />
               FILA.
+            </span>
           </h1>
           <span className={styles.badge}>SOFTWARE DEV</span>
         </div>
@@ -50,7 +52,7 @@ export default function Hero() {
         <div className={styles.portraitWrapper}>
           <img
             src='profile/avatar.jpg'
-            alt="Portrait"
+            alt="Norbert Fila - Portrait"
             className={styles.image}
             loading="lazy"
           />
