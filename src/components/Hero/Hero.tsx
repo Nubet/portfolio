@@ -16,7 +16,7 @@ export default function Hero() {
               NORBERT<br />
               FILA.
           </h1>
-          <span className={styles.badge}>BACKEND DEV</span>
+          <span className={styles.badge}>SOFTWARE DEV</span>
         </div>
 
         <p className={styles.subhead}>
