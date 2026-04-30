@@ -3,10 +3,18 @@ import { MoveLeft } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import styles from './ProjectsPage.module.css'
 import { useEffect } from 'react'
+import { setSeo } from '../../utils/seo'
 
 export default function ProjectsPage() {
   useEffect(() => {
     window.scrollTo(0, 0)
+
+    setSeo({
+      title: 'Projects - Norbert Fila Portfolio',
+      description:
+        'Browse software projects by Norbert Fila',
+      canonicalUrl: 'https://norbertfila.com/portfolio/projects',
+    })
   }, [])
 
   return (
