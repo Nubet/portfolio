@@ -14,7 +14,7 @@ export default function Footer() {
             START A CONVERSATION <ArrowUpRight size={24} strokeWidth={3} />
           </a>
           <div className={styles.secondaryActions}>
-            <a href="https://www.linkedin.com/in/nobert-fila/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+            <a href="https://www.linkedin.com/in/norbert-fila/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
               <Linkedin size={24} strokeWidth={2.5} /> LINKEDIN
             </a>
             <a href="https://github.com/nubet" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>

@@ -32,7 +32,7 @@ export default function Hero() {
           </a>
 
           <div className={styles.socialLinks}>
-            <a href="https://www.linkedin.com/in/nobert-fila/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/norbert-fila/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="LinkedIn">
               <Linkedin size={28} strokeWidth={2.5} />
             </a>
             <a href="https://github.com/nubet" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="GitHub">
