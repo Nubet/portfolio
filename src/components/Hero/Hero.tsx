@@ -51,7 +51,7 @@ export default function Hero() {
       <div className={styles.visual}>
         <div className={styles.portraitWrapper}>
           <img
-            src='profile/avatar.jpg'
+            src='profile/avatar.webp'
             alt="Norbert Fila - Portrait"
             className={styles.image}
             loading="lazy"
