@@ -13,7 +13,7 @@ export default function Home() {
     setSeo({
       title: 'Norbert Fila - Software Developer Portfolio',
       description:
-        'Portfolio of Norbert Fila: frontend and full-stack projects, technical stack, and contact details.',
+        'Portfolio of Norbert Fila, a full-stack software developer and Computer Science student building modern web applications, cross-platform mobile products, and low-level engineering solutions.',
       canonicalUrl: 'https://norbertfila.com/portfolio/',
     })
   }, [])
