@@ -54,7 +54,8 @@ export default function Hero() {
             src='profile/avatar.webp'
             alt="Norbert Fila - Portrait"
             className={styles.image}
-            loading="lazy"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className={styles.portraitFrame}></div>
         </div>
